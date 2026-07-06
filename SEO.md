@@ -27,7 +27,7 @@ node scripts/seo-check.mjs http://localhost:3000
 After deploy (production domain):
 
 ```bash
-node scripts/seo-check.mjs https://www.mixarestaurant.co.uk
+node scripts/seo-check.mjs https://www.mixarestaurant.com
 ```
 
 ---
@@ -36,8 +36,8 @@ node scripts/seo-check.mjs https://www.mixarestaurant.co.uk
 
 Google rarely indexes `*.vercel.app` for local business queries. **You need the live domain** connected and verified:
 
-1. Point `mixarestaurant.co.uk` → Vercel (GoDaddy DNS)
-2. Set env on Vercel: `NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.co.uk`
+1. Point `mixarestaurant.com` → GitHub Pages (GoDaddy DNS)
+2. Set build env: `NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.com`
 3. Redeploy so canonicals, sitemap, and schema use the production URL
 
 ---
@@ -45,9 +45,9 @@ Google rarely indexes `*.vercel.app` for local business queries. **You need the 
 ## Google Search Console (critical — do this week)
 
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add property: `https://www.mixarestaurant.co.uk`
+2. Add property: `https://www.mixarestaurant.com`
 3. Verify via DNS TXT record (GoDaddy) or HTML file
-4. Submit sitemap: `https://www.mixarestaurant.co.uk/sitemap.xml`
+4. Submit sitemap: `https://www.mixarestaurant.com/sitemap.xml`
 5. Request indexing for: `/`, `/menu`, `/book`, `/contact`
 6. Monitor: **Performance** → queries containing "Winchester", "restaurant", "wine bar"
 
@@ -66,7 +66,7 @@ This matters more than on-page SEO for *"best restaurant Winchester"*.
 | Secondary | Mediterranean restaurant, Greek restaurant |
 | Address | 56 St George's Street, Winchester SO23 8AH |
 | Phone | 01962 582592 |
-| Website | https://www.mixarestaurant.co.uk |
+| Website | https://www.mixarestaurant.com |
 | Hours | Mon–Sat 12:00–22:00, Sun closed |
 | Attributes | Outdoor seating, vegan options, cocktails, live music |
 | Photos | Upload 20+ from `/public/photos` — food, interior, exterior, menu |
@@ -124,7 +124,7 @@ NAP must be identical:
 Yiayias MIXA
 56 St George's Street, Winchester SO23 8AH
 01962 582592
-https://www.mixarestaurant.co.uk
+https://www.mixarestaurant.com
 ```
 
 ---
@@ -164,7 +164,7 @@ Typical competitors for your queries:
 - [ ] TripAdvisor hours match website
 - [ ] Facebook URL updated in `siteConfig.social.facebook`
 - [ ] Optional: GA4 property + link in Search Console
-- [ ] Run `node scripts/seo-check.mjs https://www.mixarestaurant.co.uk`
+- [ ] Run `node scripts/seo-check.mjs https://www.mixarestaurant.com`
 
 ---
 

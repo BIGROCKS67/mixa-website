@@ -10,10 +10,10 @@ export const siteConfig = {
     "World flavours at one table — small plates, carefully selected wines and a relaxed atmosphere made for sharing.",
   description:
     "MIXA is a restaurant and wine bar on St George's Street, Winchester. Small plates from around the world, great wine, outdoor seating and a welcoming sharing experience.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mixa-puce.vercel.app",
-  website: "https://www.mixarestaurant.co.uk",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mixarestaurant.com",
+  website: "https://www.mixarestaurant.com",
   phone: "01962 582592",
-  email: "info@mixarestaurant.co.uk",
+  email: "info@mixarestaurant.com",
   address: {
     line1: "56 St George's St",
     line2: "Winchester",

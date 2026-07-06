@@ -1,52 +1,35 @@
 # MIXA — GitHub Pages go-live
 
-Host: **GitHub Pages** (not Vercel).  
-Primary domain: **https://www.mixarestaurant.co.uk**
+Host: **GitHub Pages**  
+Primary domain: **https://www.mixarestaurant.com**
 
 ---
 
-## 1. Create the GitHub repo
+## 1. GitHub repo
 
-Push the **`mixa`** folder as its own repo (repo root = this folder):
+https://github.com/BIGROCKS67/mixa-website
 
-```bash
-cd mixa
-git init
-git add .
-git commit -m "MIXA website — GitHub Pages"
-git branch -M main
-git remote add origin https://github.com/YOUR_ORG/mixa-website.git
-git push -u origin main
-```
+Push to `main` → auto-deploy via GitHub Actions.
 
 ---
 
-## 2. Enable GitHub Pages
+## 2. Custom domain (GoDaddy)
 
-1. Repo → **Settings** → **Pages**
-2. **Build and deployment** → Source: **GitHub Actions**
-3. Push to `main` — workflow `.github/workflows/deploy-pages.yml` runs automatically
-4. When green, site is at `https://YOUR_USER.github.io/REPO_NAME/` until DNS is set
+### Primary: `mixarestaurant.com`
 
----
-
-## 3. Custom domain (GoDaddy)
-
-### Primary: `mixarestaurant.co.uk`
-
-In **GitHub** → Settings → Pages → **Custom domain** → enter:
+In **GitHub** → Settings → Pages → **Custom domain**:
 
 ```text
-www.mixarestaurant.co.uk
+www.mixarestaurant.com
 ```
 
 Enable **Enforce HTTPS** when available.
 
-`public/CNAME` already contains `www.mixarestaurant.co.uk`.
+`public/CNAME` contains `www.mixarestaurant.com`.
 
-### GoDaddy DNS for `mixarestaurant.co.uk`
+### GoDaddy DNS for `mixarestaurant.com`
 
-**Remove** any “Forward Domain” on this domain — use DNS only.
+**Remove** any “Forward Domain” — use DNS only.
 
 | Type | Name | Value |
 |------|------|--------|
@@ -54,67 +37,44 @@ Enable **Enforce HTTPS** when available.
 | **A** | `@` | `185.199.109.153` |
 | **A** | `@` | `185.199.110.153` |
 | **A** | `@` | `185.199.111.153` |
-| **CNAME** | `www` | `YOUR_GITHUB_USERNAME.github.io` |
+| **CNAME** | `www` | `bigrocks67.github.io` |
 
-Replace `YOUR_GITHUB_USERNAME.github.io` with your actual Pages host (shown in GitHub Pages settings after first deploy).
+Wait 15–60 minutes, then check **https://www.mixarestaurant.com**
 
-Delete old A/CNAME records pointing at Vercel or parking pages.
+Optional: forward bare `mixarestaurant.com` → `https://www.mixarestaurant.com` (301).
 
-Wait 15–60 minutes, then check **https://www.mixarestaurant.co.uk**
+### Secondary: `mixarestaurant.co.uk` (+ any other domain)
 
-### Apex → www (optional)
+Forward to the `.com` site:
 
-In GoDaddy, forward `mixarestaurant.co.uk` → `https://www.mixarestaurant.co.uk` (301 permanent).
-
----
-
-## 4. Other domains (`mixarestaurant.com` + 3rd domain)
-
-GitHub Pages = **one custom domain per repo**.
-
-For `.com` and any other domain → **GoDaddy Forward Domain**:
-
-- From: `mixarestaurant.com` and `www.mixarestaurant.com`
-- To: `https://www.mixarestaurant.co.uk`
-- Type: **Permanent (301)**
-
-Do **not** use DNS A records on `.com` if you’re only forwarding.
+- **To:** `https://www.mixarestaurant.com`
+- **Type:** Permanent (301)
+- Apply to `@` and `www` on `.co.uk`
 
 ---
 
-## 5. Environment variable
-
-Set at build time (already in workflow):
+## 3. Build env
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.co.uk
+NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.com
 ```
 
-Canonical URLs, sitemap, and schema use this.
+Set in `.github/workflows/deploy-pages.yml` for production builds.
 
 ---
 
-## 6. After go-live
+## 4. After go-live
 
-1. Google Search Console → add `www.mixarestaurant.co.uk` → submit sitemap  
-2. Google Business Profile → website = `https://www.mixarestaurant.co.uk`  
-3. Anthony updates Instagram / socials to the live URL  
-4. Emails (info@, matt@, paul@, courtney@) — set up in GoDaddy separately  
+1. Google Search Console → `www.mixarestaurant.com` → submit sitemap  
+2. Google Business Profile → website = `https://www.mixarestaurant.com`  
+3. Emails: info@, matt@, paul@, courtney@ **@mixarestaurant.com** (GoDaddy Email)
 
 ---
 
-## 7. Local build test
+## 5. Local test
 
 ```bash
 npm ci
-NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.co.uk npm run build
+NEXT_PUBLIC_SITE_URL=https://www.mixarestaurant.com npm run build
 npx serve out
 ```
-
-Static files land in **`out/`**.
-
----
-
-## Vercel
-
-You can remove the Vercel project / domains if everything is on GitHub Pages. Preview URL `mixa-puce.vercel.app` is no longer needed after DNS is live.
