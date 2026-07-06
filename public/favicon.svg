@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 914 119" fill="none">
+  <rect width="914" height="119" fill="#282828"/>
+  <text x="90" y="88" fill="#4E6450" font-family="Montserrat, Arial, sans-serif" font-weight="300" font-size="74">M</text>
+  <text x="278" y="88" fill="#4E6450" font-family="Montserrat, Arial, sans-serif" font-weight="300" font-size="74">I</text>
+  <text x="466" y="88" fill="#4E6450" font-family="Montserrat, Arial, sans-serif" font-weight="300" font-size="74">X</text>
+  <path d="M 654 88 L 708 22 L 762 88 Z" fill="#4E6450"/>
+</svg>
