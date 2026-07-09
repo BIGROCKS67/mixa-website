@@ -46,7 +46,7 @@ export const siteConfig = {
   },
   bookingCta: "Book a Table Today",
   bookingUrl:
-    "https://web.dojo.app/create_booking/vendor/QE47yv-7a-_GmmoePQHhJNHPuSkSfyQaDNJtHUvf2DU_restaurant",
+    "https://www.opentable.co.uk/r/mixa-winchester-reservations-winchester?restref=424833&lang=en-GB&ot_source=Restaurant%20website",
   parentWebsite: "https://www.yiayias.co.uk",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Yiayias+MIXA+Winchester+56+St+George%27s+St+Winchester+SO23+8AH",
