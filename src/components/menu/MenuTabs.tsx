@@ -29,7 +29,7 @@ export function MenuTabs() {
         ))}
       </div>
 
-      {activeTab === "food" && <AllergenKey />}
+      {["food", "roasts", "cheeses", "desserts"].includes(activeTab) && <AllergenKey />}
 
       <div className="mt-10 space-y-12">
         {current.sections.map((section) => (

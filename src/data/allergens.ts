@@ -35,7 +35,7 @@ export const allergenLegend: AllergenCode[] = [
   { code: "E", label: "Egg" },
   { code: "F", label: "Fish" },
   { code: "G", label: "Gluten" },
-  { code: "M", label: "Mustard" },
+  { code: "MU", label: "Mustard" },
   { code: "N", label: "Nuts" },
   { code: "S", label: "Sesame" },
   { code: "SF", label: "Shellfish" },

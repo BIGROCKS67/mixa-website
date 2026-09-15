@@ -74,7 +74,7 @@ export function AllergenKey() {
               ["E", "Egg"],
               ["F", "Fish"],
               ["G", "Gluten"],
-              ["M", "Mustard"],
+              ["MU", "Mustard"],
               ["N", "Nuts"],
               ["S", "Sesame"],
               ["SF", "Shellfish"],
